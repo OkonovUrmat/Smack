@@ -378,6 +378,9 @@
                                     <segment title="Light"/>
                                 </segments>
                                 <color key="tintColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentControlChanged:" destination="8Wf-Kd-SN5" eventType="valueChanged" id="zGu-yE-GJh"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dSU-94-hwY">
                                 <rect key="frame" x="0.0" y="100" width="414" height="762"/>
@@ -407,6 +410,9 @@
                                             <constraint firstAttribute="bottom" secondItem="uZr-n6-2hA" secondAttribute="bottom" constant="10" id="Zgp-ND-IyT"/>
                                             <constraint firstItem="uZr-n6-2hA" firstAttribute="leading" secondItem="YGl-NV-mRZ" secondAttribute="leading" constant="10" id="Zjv-XU-H8a"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="avatarImg" destination="uZr-n6-2hA" id="faI-IL-A0U"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -426,7 +432,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionVIew" destination="dSU-94-hwY" id="DRe-lO-0iC"/>
-                        <outlet property="segmentControl" destination="X0O-2E-LEO" id="iiN-a7-uax"/>
+                        <outlet property="segmentControl" destination="X0O-2E-LEO" id="wOC-hJ-SLb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAl-8V-rEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
