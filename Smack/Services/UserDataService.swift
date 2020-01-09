@@ -12,7 +12,7 @@ class UserDataService {
     
     static let instance = UserDataService()
     
-    public private(set) var id = "" // public означает что данные id можно получать с любого класса, private(set) скрываем задавание id
+    public private(set) var id = "" // public mean that id we can get from every class, private(set) setting id is a private
     public private(set) var avatarColor = ""
     public private(set) var avatarName = ""
     public private(set) var email = ""
