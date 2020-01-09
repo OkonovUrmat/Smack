@@ -89,12 +89,16 @@ class AuthService {
                 //Using SwiftyJSON
                 
                 guard let data = response.data else { return }
-                let json = JSON(data : data)
-                self.userEmail = json["user"].stringValue
-                self.auth = json["token"].stringValue
+                do{
+                    let json = try JSON(data : data)
+                    self.userEmail = json["user"].stringValue
+                    self.auth = json["token"].stringValue
+                    self.isLoggedIn = true
+                    completion(true)
+                } catch {
+                    print(error)
+                }
                 
-                self.isLoggedIn = true
-                completion(true)
             }
             else {
                 completion(false)
@@ -122,18 +126,21 @@ class AuthService {
         
         Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             if response.result.error == nil {
-                guard let data = response.data else { return }
-                let json = JSON(data: data)
-                let id = json["_id"].stringValue
-                let color = json["avatarColor"].stringValue
-                let avatarName = json["avatarName"].stringValue
-                let email = json["email"].stringValue
-                let name = json["name"].stringValue
-                
-                UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email
-                    , name: name)
-                completion(true)
-                
+                do {
+                    guard let data = response.data else { return }
+                    let json = try JSON(data: data)
+                    let id = json["_id"].stringValue
+                    let color = json["avatarColor"].stringValue
+                    let avatarName = json["avatarName"].stringValue
+                    let email = json["email"].stringValue
+                    let name = json["name"].stringValue
+                    
+                    UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email
+                        , name: name)
+                    completion(true)
+                } catch{
+                    print(error)
+                }
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)
