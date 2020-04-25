@@ -25,7 +25,7 @@ class AuthService {
         }
     }
     //Регистрация
-    var auth: String {
+    var authToken: String {
         get {
             return defaults.value(forKey: TOKEN_KEY) as! String
         }
@@ -91,7 +91,7 @@ class AuthService {
                 guard let data = response.data else { return }
                 let json = JSON(data : data)
                 self.userEmail = json["user"].stringValue
-                self.auth = json["token"].stringValue
+                self.authToken = json["token"].stringValue
                 
                 self.isLoggedIn = true
                 completion(true)
@@ -116,7 +116,7 @@ class AuthService {
         ]
         
         let header = [
-            "Authorization": "Bearer \(AuthService.instance.auth)",
+            "Authorization": "Bearer \(AuthService.instance.authToken)",
             "Content-Type": "application/json; charset=utf-8"
         ]
         
