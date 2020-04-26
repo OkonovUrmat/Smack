@@ -89,7 +89,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="rrA-iA-QbN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2ZM-HX-LAy"/>
                 <constraint firstItem="lCK-1b-9Ac" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Neb-aE-RXK"/>
