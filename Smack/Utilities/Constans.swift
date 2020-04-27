@@ -44,3 +44,8 @@ let USER_EMAIL = "userEmail"
 
 //Headers
 let HEADER = ["Content-Type": "application/json; charset=utf-8"] //Заголовок как в Postman
+
+let BEARER_HEADER = [
+    "Authorization": "Bearer \(AuthService.instance.auth)",
+    "Content-Type": "application/json; charset=utf-8"
+]
