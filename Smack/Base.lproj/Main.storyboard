@@ -236,7 +236,14 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="aqf-aJ-qXG" eventType="touchUpInside" id="hPb-K9-pwc"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Nbc-H0-fZp">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -247,13 +254,18 @@
                             <constraint firstItem="Ue9-EZ-rzi" firstAttribute="top" secondItem="Nhg-bk-qeW" secondAttribute="bottom" id="RVc-Fi-rkA"/>
                             <constraint firstItem="Nhg-bk-qeW" firstAttribute="top" secondItem="GAz-3P-JAM" secondAttribute="bottom" constant="40" id="SXg-93-IeC"/>
                             <constraint firstItem="Ivm-au-0xh" firstAttribute="top" secondItem="lNc-lN-9Gk" secondAttribute="bottom" constant="60" id="TsH-3F-qCc"/>
+                            <constraint firstItem="Nbc-H0-fZp" firstAttribute="centerX" secondItem="xqN-cx-awm" secondAttribute="centerX" id="XnV-mQ-PbK"/>
                             <constraint firstItem="Nhg-bk-qeW" firstAttribute="centerX" secondItem="xqN-cx-awm" secondAttribute="centerX" id="Ydh-E7-y9e"/>
                             <constraint firstItem="GAz-3P-JAM" firstAttribute="top" secondItem="Ivm-au-0xh" secondAttribute="bottom" constant="40" id="ZbS-l2-pa0"/>
                             <constraint firstItem="Uzx-S8-tLL" firstAttribute="top" secondItem="lNc-lN-9Gk" secondAttribute="bottom" constant="8" id="fWI-JA-Wlf"/>
+                            <constraint firstItem="Nbc-H0-fZp" firstAttribute="centerY" secondItem="xqN-cx-awm" secondAttribute="centerY" constant="-100" id="zZ8-aH-izn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="P0h-vI-X6X"/>
                     <connections>
+                        <outlet property="passwordTxt" destination="MPW-2P-9fO" id="0hP-ky-wZ0"/>
+                        <outlet property="spinner" destination="Nbc-H0-fZp" id="ABM-6V-UU7"/>
+                        <outlet property="usernameTxt" destination="Qfs-WA-EBb" id="C1l-77-bdP"/>
                         <segue destination="OBK-3Z-M0R" kind="modal" identifier="toCreateAccount" modalPresentationStyle="fullScreen" id="khi-jm-eZp"/>
                     </connections>
                 </viewController>

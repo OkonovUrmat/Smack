@@ -77,14 +77,14 @@ class AuthService {
         Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             //Что должно быть результаттом как в Postman
             if response.result.error == nil {
-//                if let json = response.result.value as? Dictionary<String,Any> {
-//                    if let email = json["user"] as? String { //В postman email выводится результатом как user
-//                        self.userEmail = email //В следствии чего мы введенный email приравниваем к user self.userEmail это user в результатах
-//                    }
-//                    if let token = json["token"] as? String { //Здесь auth это токен авторизированного пользователя и он передается как результат
-//                        self.auth = token
-//                    }
-//                }
+                //                if let json = response.result.value as? Dictionary<String,Any> {
+                //                    if let email = json["user"] as? String { //В postman email выводится результатом как user
+                //                        self.userEmail = email //В следствии чего мы введенный email приравниваем к user self.userEmail это user в результатах
+                //                    }
+                //                    if let token = json["token"] as? String { //Здесь auth это токен авторизированного пользователя и он передается как результат
+                //                        self.auth = token
+                //                    }
+                //                }
                 
                 //Using SwiftyJSON
                 
@@ -115,23 +115,10 @@ class AuthService {
             "avatarColor": avatarColor
         ]
         
-        let header = [
-            "Authorization": "Bearer \(AuthService.instance.auth)",
-            "Content-Type": "application/json; charset=utf-8"
-        ]
-        
-        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             if response.result.error == nil {
                 guard let data = response.data else { return }
-                let json = JSON(data: data)
-                let id = json["_id"].stringValue
-                let color = json["avatarColor"].stringValue
-                let avatarName = json["avatarName"].stringValue
-                let email = json["email"].stringValue
-                let name = json["name"].stringValue
-                
-                UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email
-                    , name: name)
+                self.setUserInfo(data: data)
                 completion(true)
                 
             } else {
@@ -139,7 +126,32 @@ class AuthService {
                 debugPrint(response.result.error as Any)
             }
         }
+    }
+    
+    func findUserByEmail(completion: @escaping CompletionHandler) {
+        Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                self.setUserInfo(data: data)
+                completion(true)
+                
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    func setUserInfo(data: Data){
+        let json = JSON(data: data)
+        let id = json["_id"].stringValue
+        let color = json["avatarColor"].stringValue
+        let avatarName = json["avatarName"].stringValue
+        let email = json["email"].stringValue
+        let name = json["name"].stringValue
         
+        UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email
+            , name: name)
     }
     
 }
