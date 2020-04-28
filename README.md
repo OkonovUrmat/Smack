@@ -21,6 +21,14 @@ Either clone this repo and add the project to your Xcode workspace, use [CocoaPo
 pod install & pod update
 ```
 
+And also you would need to install an API 
+
+```
+npm install
+npm run dev
+brew services start mongodb-community
+brew services restart mongodb-community
+```
 
 **Note**
 This is just a beta-app. Not published anywhere.
