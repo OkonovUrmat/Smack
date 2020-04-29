@@ -78,7 +78,7 @@
                                 <rect key="frame" x="0.0" y="105" width="375" height="447"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="P2c-Eo-vk7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" id="P2c-Eo-vk7" customClass="ChannelCell" customModule="Smack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P2c-Eo-vk7" id="ael-Vc-eYS">
@@ -98,6 +98,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="channelName" destination="zea-4p-6XY" id="Bdo-Du-rbA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -122,6 +125,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="3oW-6i-zRa" id="gL9-aK-B4I"/>
+                        <outlet property="tableView" destination="cbE-4T-T8H" id="7q6-3G-OXq"/>
                         <outlet property="userImg" destination="kwu-Vg-5Gc" id="JhL-iH-wf5"/>
                         <segue destination="aqf-aJ-qXG" kind="presentation" identifier="toLogin" modalPresentationStyle="fullScreen" id="T6q-yp-wQD"/>
                     </connections>
