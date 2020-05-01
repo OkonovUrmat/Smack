@@ -29,6 +29,8 @@
 		37CB050122DF24FF0011D54C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37CB050022DF24FF0011D54C /* Assets.xcassets */; };
 		37CB050422DF24FF0011D54C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37CB050222DF24FF0011D54C /* LaunchScreen.storyboard */; };
 		37CB050E22DF59BD0011D54C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CB050C22DF59BD0011D54C /* SWRevealViewController.m */; };
+		37DD634A245C4DD200E3553F /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD6349245C4DD200E3553F /* SocketService.swift */; };
+		37DD634E245C600000E3553F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD634D245C600000E3553F /* Screen.swift */; };
 		37F0DBC522E0B5A5001C314D /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0DBC422E0B5A5001C314D /* ChatVC.swift */; };
 		37F0DBC722E0B5B5001C314D /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0DBC622E0B5B5001C314D /* ChannelVC.swift */; };
 		D91EA7118F3A1E5C04EAE0C2 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAD0FDB65B52DF187817ABF /* Pods_Smack.framework */; };
@@ -62,6 +64,8 @@
 		37CB050B22DF59BC0011D54C /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		37CB050C22DF59BD0011D54C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		37CB050D22DF59BD0011D54C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		37DD6349245C4DD200E3553F /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
+		37DD634D245C600000E3553F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		37F0DBC422E0B5A5001C314D /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		37F0DBC622E0B5B5001C314D /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		5EAD0FDB65B52DF187817ABF /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +98,7 @@
 				370D345F22E48CD400B75B11 /* AuthService.swift */,
 				3709DCBA2333A76F006BEF32 /* UserDataService.swift */,
 				37B7E816245869110017581A /* MessageService.swift */,
+				37DD6349245C4DD200E3553F /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				37CB050022DF24FF0011D54C /* Assets.xcassets */,
 				37CB050222DF24FF0011D54C /* LaunchScreen.storyboard */,
 				37CB050522DF24FF0011D54C /* Info.plist */,
+				37DD634D245C600000E3553F /* Screen.swift */,
 			);
 			path = Smack;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37DD634A245C4DD200E3553F /* SocketService.swift in Sources */,
 				37B77DED245360F500C7C4F2 /* ProfileVC.swift in Sources */,
 				378AAA6E2459B938004F8088 /* ChannelCell.swift in Sources */,
 				37F0DBC722E0B5B5001C314D /* ChannelVC.swift in Sources */,
@@ -331,6 +338,7 @@
 				37039CA822E200BA00A88B96 /* CreateAccountVC.swift in Sources */,
 				370D346022E48CD400B75B11 /* AuthService.swift in Sources */,
 				37039CA622E1FEB900A88B96 /* LoginVC.swift in Sources */,
+				37DD634E245C600000E3553F /* Screen.swift in Sources */,
 				37B8F40C245B2304007F8A69 /* AddChannelVC.swift in Sources */,
 				37039CA422E1F85000A88B96 /* Constans.swift in Sources */,
 				37039CA122E1EDF200A88B96 /* GradientView.swift in Sources */,

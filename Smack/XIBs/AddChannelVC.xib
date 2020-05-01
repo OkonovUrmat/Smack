@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddChannelVC" customModule="Smack" customModuleProvider="target">
             <connections>
                 <outlet property="bgView" destination="nm1-2o-aUT" id="6dY-uk-T5D"/>
+                <outlet property="bgViewBottomConstraint" destination="nz4-L7-j5W" id="6jb-Vh-Oyl"/>
+                <outlet property="bgViewTopConstraint" destination="GcC-FC-KvB" id="kmx-zO-uzR"/>
                 <outlet property="chanDesc" destination="oEx-KB-9oL" id="ydL-Np-8fI"/>
                 <outlet property="nameTxt" destination="QXt-mK-dIo" id="0zw-ig-ape"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

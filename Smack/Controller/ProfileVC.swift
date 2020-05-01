@@ -16,9 +16,14 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var bgView: UIView!
     
+    //Constraints
+    @IBOutlet weak var bgViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bgViewBottomConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setConstraints()
     }
     
     @IBAction func logoutPressed(_ sender: Any) {
@@ -39,6 +44,13 @@ class ProfileVC: UIViewController {
         
         let closeTouch = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.closeTap(_:)))
         bgView.addGestureRecognizer(closeTouch)
+    }
+    
+    func setConstraints() {
+        if Screen.isiPhoneXDevice {
+            bgViewTopConstraint.constant = -44
+            bgViewBottomConstraint.constant = -34
+        }
     }
     
     @objc func closeTap(_ recognizer: UITapGestureRecognizer) {
