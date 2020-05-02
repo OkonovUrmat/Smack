@@ -12,6 +12,7 @@ class ChatVC: UIViewController {
 
     //Outlets
     @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet weak var channelNameLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
