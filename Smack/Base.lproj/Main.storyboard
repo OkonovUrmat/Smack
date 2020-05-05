@@ -600,6 +600,10 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="messageBoxEditing:" destination="CP9-s7-rxl" eventType="editingChanged" id="bf7-sA-jeh"/>
+                                    <action selector="messageBoxEditing:" destination="CP9-s7-rxl" eventType="editingDidEnd" id="fz7-C0-7py"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6z-1v-Zvl">
                                 <rect key="frame" x="337" y="632" width="30" height="30"/>
@@ -689,7 +693,8 @@
                     <connections>
                         <outlet property="channelNameLbl" destination="ahf-Pe-04h" id="n1h-aA-HvQ"/>
                         <outlet property="menuBtn" destination="1DW-3Z-d9n" id="ZTc-ge-rj1"/>
-                        <outlet property="messageTxtBox" destination="JY6-SD-7FL" id="RgT-3n-YKS"/>
+                        <outlet property="messageTxtBox" destination="JY6-SD-7FL" id="9xF-Bp-yGn"/>
+                        <outlet property="sendBtn" destination="q6z-1v-Zvl" id="Fdc-LV-V7P"/>
                         <outlet property="tableView" destination="DUZ-ct-MFx" id="LXw-Fm-uLB"/>
                     </connections>
                 </viewController>
