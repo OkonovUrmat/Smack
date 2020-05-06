@@ -96,6 +96,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zea-4p-6XY" secondAttribute="trailing" constant="20" symbolic="YES" id="WSz-Pf-q5P"/>
                                                 <constraint firstItem="zea-4p-6XY" firstAttribute="leading" secondItem="ael-Vc-eYS" secondAttribute="leadingMargin" constant="20" id="d5A-x5-Axe"/>
                                                 <constraint firstItem="zea-4p-6XY" firstAttribute="centerY" secondItem="ael-Vc-eYS" secondAttribute="centerY" id="fJr-Ak-6WA"/>
                                             </constraints>
@@ -111,13 +112,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IGw-6G-1Vo" firstAttribute="top" secondItem="kwu-Vg-5Gc" secondAttribute="bottom" constant="20" id="1XH-Mw-J6g"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3oW-6i-zRa" secondAttribute="trailing" constant="20" symbolic="YES" id="6Eg-S3-C70"/>
                             <constraint firstAttribute="trailing" secondItem="cbE-4T-T8H" secondAttribute="trailing" id="6OI-M0-yur"/>
                             <constraint firstItem="oEm-P5-glK" firstAttribute="leading" secondItem="cUM-iV-QVM" secondAttribute="leadingMargin" id="6Vz-tA-zak"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oEm-P5-glK" secondAttribute="trailing" constant="20" symbolic="YES" id="9Nk-8n-0ru"/>
                             <constraint firstItem="3oW-6i-zRa" firstAttribute="centerY" secondItem="kwu-Vg-5Gc" secondAttribute="centerY" id="A6z-4h-xMs"/>
                             <constraint firstItem="QXp-rw-gRG" firstAttribute="leading" secondItem="cUM-iV-QVM" secondAttribute="leadingMargin" id="HNF-3P-DKJ"/>
                             <constraint firstItem="kwu-Vg-5Gc" firstAttribute="leading" secondItem="cUM-iV-QVM" secondAttribute="leadingMargin" id="K48-Ii-HBQ"/>
                             <constraint firstItem="QXp-rw-gRG" firstAttribute="top" secondItem="oEm-P5-glK" secondAttribute="bottom" constant="20" id="OMF-eh-i87"/>
                             <constraint firstItem="3oW-6i-zRa" firstAttribute="leading" secondItem="kwu-Vg-5Gc" secondAttribute="trailing" constant="20" id="TeH-8L-haS"/>
+                            <constraint firstItem="AVg-fC-Oea" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QXp-rw-gRG" secondAttribute="trailing" constant="8" symbolic="YES" id="VsM-K6-0FS"/>
                             <constraint firstItem="oEm-P5-glK" firstAttribute="top" secondItem="AHr-Cx-FcS" secondAttribute="bottom" constant="24" id="WTi-dg-leU"/>
                             <constraint firstItem="cbE-4T-T8H" firstAttribute="leading" secondItem="cUM-iV-QVM" secondAttribute="leading" id="YYJ-Qa-qRQ"/>
                             <constraint firstItem="kwu-Vg-5Gc" firstAttribute="top" secondItem="cbE-4T-T8H" secondAttribute="bottom" constant="20" id="axb-6J-pyp"/>
@@ -672,6 +676,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBt-tk-R2I">
+                                <rect key="frame" x="8" y="621" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -684,8 +694,11 @@
                             <constraint firstItem="JY6-SD-7FL" firstAttribute="top" secondItem="DUZ-ct-MFx" secondAttribute="bottom" constant="30" id="Ycg-l7-5SC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DUZ-ct-MFx" secondAttribute="trailing" id="dLP-uW-DyW"/>
                             <constraint firstItem="q6z-1v-Zvl" firstAttribute="centerY" secondItem="JY6-SD-7FL" secondAttribute="centerY" id="fKc-be-ELx"/>
+                            <constraint firstItem="aBt-tk-R2I" firstAttribute="leading" secondItem="h5m-Fh-EaB" secondAttribute="leading" constant="8" id="icZ-93-FhJ"/>
                             <constraint firstAttribute="trailing" secondItem="q6z-1v-Zvl" secondAttribute="trailing" constant="8" id="lTX-n9-362"/>
+                            <constraint firstItem="JY6-SD-7FL" firstAttribute="top" secondItem="aBt-tk-R2I" secondAttribute="bottom" constant="6" id="px5-ZR-kzf"/>
                             <constraint firstItem="JY6-SD-7FL" firstAttribute="leading" secondItem="h5m-Fh-EaB" secondAttribute="leading" id="r6f-dq-EGg"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aBt-tk-R2I" secondAttribute="trailing" constant="20" symbolic="YES" id="rg1-Y9-wSS"/>
                             <constraint firstItem="ZDT-ds-h1k" firstAttribute="top" secondItem="JY6-SD-7FL" secondAttribute="bottom" id="tz7-zz-NfZ"/>
                             <constraint firstAttribute="trailing" secondItem="22a-Xj-KRE" secondAttribute="trailing" id="ws8-sZ-UAD"/>
                         </constraints>
@@ -696,6 +709,7 @@
                         <outlet property="messageTxtBox" destination="JY6-SD-7FL" id="9xF-Bp-yGn"/>
                         <outlet property="sendBtn" destination="q6z-1v-Zvl" id="Fdc-LV-V7P"/>
                         <outlet property="tableView" destination="DUZ-ct-MFx" id="LXw-Fm-uLB"/>
+                        <outlet property="typingUsersLbl" destination="aBt-tk-R2I" id="swf-sv-TcX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7K0-ge-5ne" userLabel="First Responder" sceneMemberID="firstResponder"/>
