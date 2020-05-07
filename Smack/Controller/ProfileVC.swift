@@ -26,6 +26,10 @@ class ProfileVC: UIViewController {
         setConstraints()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(nameChanged), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+    }
+    
     @IBAction func logoutPressed(_ sender: Any) {
         UserDataService.instance.logoutUser()
         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
@@ -53,7 +57,19 @@ class ProfileVC: UIViewController {
         }
     }
     
+    @objc func nameChanged() {
+        userName.text = UserDataService.instance.name
+    }
+    
     @objc func closeTap(_ recognizer: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func editName(_ sender: Any) {
+        if AuthService.instance.isLoggedIn {
+            let editProfile = EditProfileVC()
+            editProfile.modalPresentationStyle = .custom
+            present(editProfile, animated: true, completion: nil)
+        }
     }
 }
