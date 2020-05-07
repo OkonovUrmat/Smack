@@ -56,4 +56,12 @@ class ProfileVC: UIViewController {
     @objc func closeTap(_ recognizer: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func editName(_ sender: Any) {
+        if AuthService.instance.isLoggedIn {
+            let editProfile = EditProfileVC()
+            editProfile.modalPresentationStyle = .custom
+            present(editProfile, animated: true, completion: nil)
+        }
+    }
 }
