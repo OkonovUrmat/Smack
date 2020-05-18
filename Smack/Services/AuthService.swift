@@ -52,18 +52,17 @@ class AuthService {
             "password": password
         ]
         
-        Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString { (response) in
-            
-            if response.result.error == nil {
+        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString { (response) in
+            switch response.result {
+            case .success( _):
                 completion(true)
-            } else {
+            case .failure(let error):
                 completion(false)
-                debugPrint(response.result.error as Any)
+                debugPrint(error as Any)
             }
-            
         }
-        
     }
+    
     //Вход пользователя
     func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
         
@@ -74,9 +73,10 @@ class AuthService {
             "password": password
         ]
         
-        Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+        AF.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             //Что должно быть результаттом как в Postman
-            if response.result.error == nil {
+            switch response.result {
+            case .success( _):
                 //                if let json = response.result.value as? Dictionary<String,Any> {
                 //                    if let email = json["user"] as? String { //В postman email выводится результатом как user
                 //                        self.userEmail = email //В следствии чего мы введенный email приравниваем к user self.userEmail это user в результатах
@@ -95,12 +95,10 @@ class AuthService {
                 
                 self.isLoggedIn = true
                 completion(true)
-            }
-            else {
+            case .failure(let error):
                 completion(false)
-                debugPrint(response.result.error as Any)
+                debugPrint(error as Any)
             }
-            
         }
     }
     
@@ -115,29 +113,31 @@ class AuthService {
             "avatarColor": avatarColor
         ]
         
-        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
-            if response.result.error == nil {
+        AF.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            switch response.result {
+            case .success( _):
                 guard let data = response.data else { return }
                 self.setUserInfo(data: data)
                 completion(true)
                 
-            } else {
+            case .failure(let error):
                 completion(false)
-                debugPrint(response.result.error as Any)
+                debugPrint(error as Any)
             }
         }
     }
     
     func findUserByEmail(completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
-            if response.result.error == nil {
+        AF.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            switch response.result {
+            case .success( _):
                 guard let data = response.data else { return }
                 self.setUserInfo(data: data)
                 completion(true)
                 
-            } else {
+            case .failure(let error):
                 completion(false)
-                debugPrint(response.result.error as Any)
+                debugPrint(error as Any)
             }
         }
     }
@@ -151,14 +151,15 @@ class AuthService {
             "avatarColor": UserDataService.instance.avatarColor
         ]
         
-        Alamofire.request("\(URL_UPDATE_USER)\(UserDataService.instance.id)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
-            if response.result.error == nil {
+        AF.request("\(URL_UPDATE_USER)\(UserDataService.instance.id)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            switch response.result {
+            case .success( _):
                 guard let data = response.data else { return }
                 self.setUserInfo(data: data)
                 completion(true)
-            } else {
+            case .failure(let error):
                 completion(false)
-                debugPrint(response.result.error as Any)
+                debugPrint(error as Any)
             }
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 //Проверяем удачно ли прошла авторизация или нет
 // -> () - передача данных в функцию
@@ -48,9 +49,9 @@ let LOGGED_IN_KEY = "loggedIn"
 let USER_EMAIL = "userEmail"
 
 //Headers
-let HEADER = ["Content-Type": "application/json; charset=utf-8"] //Заголовок как в Postman
+let HEADER: HTTPHeaders = ["Content-Type": "application/json; charset=utf-8"] //Заголовок как в Postman
 
-let BEARER_HEADER = [
+let BEARER_HEADER: HTTPHeaders = [
     "Authorization": "Bearer \(AuthService.instance.auth)",
     "Content-Type": "application/json; charset=utf-8"
 ]
