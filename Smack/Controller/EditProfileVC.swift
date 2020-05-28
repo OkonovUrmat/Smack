@@ -9,7 +9,7 @@
 import UIKit
 
 class EditProfileVC: UIViewController {
-
+    
     //Outlets
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var bgView: UIView!

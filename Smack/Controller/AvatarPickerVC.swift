@@ -24,9 +24,9 @@ class AvatarPickerVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-//        performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
-//        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-//        dismiss(animated: true, completion: nil)
+        //        performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
+        //        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        //        dismiss(animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

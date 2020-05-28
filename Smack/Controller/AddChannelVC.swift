@@ -9,7 +9,7 @@
 import UIKit
 
 class AddChannelVC: UIViewController {
-
+    
     //Outlets
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var chanDesc: UITextField!

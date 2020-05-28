@@ -13,9 +13,9 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //Outlets
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var userImg: CircleImage!
-        @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     @IBAction func prepareForUnwind (segue: UIStoryboardSegue) {}
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -47,9 +47,9 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func addChannelPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
-        let addChannel = AddChannelVC()
-        addChannel.modalPresentationStyle = .custom
-        present(addChannel, animated: true, completion: nil)
+            let addChannel = AddChannelVC()
+            addChannel.modalPresentationStyle = .custom
+            present(addChannel, animated: true, completion: nil)
         }
     }
     
