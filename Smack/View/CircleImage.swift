@@ -9,7 +9,7 @@
 import UIKit
 
 class CircleImage: UIImageView {
-
+    
     override func awakeFromNib() {
         setupView()
     }
